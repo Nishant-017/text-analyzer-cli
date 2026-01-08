@@ -1,4 +1,4 @@
-# text_analyzer/taggers.py
+
 
 from nltk import pos_tag
 from nltk.tokenize import word_tokenize
@@ -8,9 +8,8 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 
-# --------------------------------------------------
 # POS TAGGING (NLTK)
-# --------------------------------------------------
+
 
 def pos_tagging(text: str):
     """
@@ -30,10 +29,8 @@ def pos_tagging(text: str):
         for word, tag in tagged
     ]
 
-
-# --------------------------------------------------
 # NER + BIO TAGGING (spaCy)
-# --------------------------------------------------
+
 
 def ner_bio_tagging(text: str):
     """
@@ -48,12 +45,12 @@ def ner_bio_tagging(text: str):
 
     doc = nlp(text)
 
-    # Extract named entities
+    
     entities = []
     for ent in doc.ents:
         entities.append((ent.text, ent.label_))
 
-    # Generate BIO tags
+    
     bio_tags = []
     for token in doc:
         if token.ent_iob_ == "O":
@@ -66,9 +63,8 @@ def ner_bio_tagging(text: str):
     return entities, bio_tags
 
 
-# --------------------------------------------------
 # Standalone test
-# --------------------------------------------------
+
 
 if __name__ == "__main__":
     sample_text = "Elon Musk founded SpaceX in California"
