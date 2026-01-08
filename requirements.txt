@@ -1,0 +1,6 @@
+nltk
+spacy
+tiktoken
+typer
+rich
+pytest
