@@ -1,4 +1,4 @@
-# text_analyzer/normalizers.py
+
 
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer, SnowballStemmer, LancasterStemmer
@@ -8,9 +8,9 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 
-# -------------------
+
 # STEMMING
-# -------------------
+
 
 def stem_text(text: str):
     """
@@ -40,9 +40,8 @@ def stem_text(text: str):
     return results
 
 
-# -------------------
 # LEMMATIZATION
-# -------------------
+
 
 def lem_text(text: str):
     """
